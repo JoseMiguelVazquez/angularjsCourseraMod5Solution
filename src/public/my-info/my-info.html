@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>My Information</h1>
+    <div ng-if="userPreferences.favoriteDish === undefined">
+        Not Signed Up Yet. <a ui-sref="public.signUp">Sign up Now!</a>
+    </div>
+    <div ng-if="userPreferences.favoriteDish !== undefined">
+        <h4>Name: {{userPreferences.firstName}} {{ userPreferences.lastName }}</h4>
+        <h4>Email: {{ userPreferences.email }}</h4>
+        <h4>Phone: {{ userPreferences.phone? userPreferences.phone : 'Not defined' }}</h4>
+        <h4>Favorite Dish:</h4>
+        <menu-item 
+        menu-item="userPreferences.favoriteDish"
+        category="{{category}}">
+    </menu-item>
+    </div>
+</div>
